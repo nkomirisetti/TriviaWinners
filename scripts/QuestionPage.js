@@ -1,0 +1,3 @@
+const QuestionPageSetup = function(categoryID) {
+
+};
