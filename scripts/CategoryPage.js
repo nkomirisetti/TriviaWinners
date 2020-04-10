@@ -1,5 +1,5 @@
 const CategoryPageSetup = function () {
-    $.ajax(getCategory).done(function (response) {
+    $.ajax(getCategory()).done(function (response) {
         categories = response.trivia_categories;
 
         let rootContainer = $('#rootContainer');
@@ -21,10 +21,9 @@ const CategoryPageSetup = function () {
         )
 
         for (const category of categories) {
-            console.log(category);
             let button = $('<button>' + category.name + '</button>');
             button.click(function () {
-                QuestionPageSetup(category.id);
+                CountdownPageSetup(category.id, category.name);
             });
             categoriesList.append(button);
         };
