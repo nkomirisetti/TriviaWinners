@@ -1,12 +1,10 @@
 const LaunchPageSetup = function () {
     let rootContainer = $('#rootContainer');
-    rootContainer.empty();  
-    
-    rootContainer.append('<div class \'mainText\'>Let\'s play Trivia!></div>');
-    titleContainer.append('<input type=\'text\' id=\'nameEntry\' class=\'textBox\' placeholder=\'Enter your name\'><br>');
+    rootContainer.empty();
+
 
     let continueButton = $('<button>Start!</button>');
-    continueButton.click(function(){
+    continueButton.click(function () {
         const enteredName = $('#nameEntry').val().trim().toLowerCase();
 
         if (enteredName) {
@@ -18,6 +16,10 @@ const LaunchPageSetup = function () {
         }
 
     });
+
+    rootContainer.append('<div class \'mainText\'>Let\'s play Trivia!</div>');
+    rootContainer.append('<input type=\'text\' id=\'nameEntry\' class=\'textBox\' placeholder=\'Enter your name\'><br>');
+    rootContainer.append(continueButton);
 };
 $(document).ready(function () {
     LaunchPageSetup();

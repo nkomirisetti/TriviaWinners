@@ -6,14 +6,22 @@ const CategoryPageSetup = function () {
         rootContainer.empty();
 
         let infoContainer = $(`<div class='playerInfo'>
-            <img src='assets/animals/ ` + picture + `'></img>
+            <img src='assets/animals/` + picture + `.png'></img>
             <div>` + name + `</div>
         </div>`);
 
         let title = $(`<div class='title'>Choose a Category</div>`);
         let categoriesList = $(`<div class='categoriesList'></div>`);
+        
+        categories.unshift(
+            {
+                "id": 'ALL',
+                "name": "Everything!"
+            }
+        )
 
-        for (category in categories) {
+        for (const category of categories) {
+            console.log(category);
             let button = $('<button>' + category.name + '</button>');
             button.click(function () {
                 QuestionPageSetup(category.id);
