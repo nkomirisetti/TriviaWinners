@@ -29,6 +29,6 @@ const shuffleArray = function (array) {
 const buildPlayerContainer = function () {
 	return $(`<div class='playerInfo'>
 				<img src='assets/animals/` + picture + `.png'></img>
-				<div>` + name + `</div>
+				<div class='playerText'>` + name + `</div>
 			  </div>`);
 }

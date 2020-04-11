@@ -33,7 +33,7 @@ const QuestionPageSetup = function (categoryID) {
 
     const buildQuestionDiv = function (question) {
         isAnswerClicked = false;
-        let questionDiv = $(`<div></div>`);
+        let questionDiv = $(`<div class='answersList'></div>`);
         questionDiv.append(`<div class='questionTitle'> Question ` + (questionNumber + 1) + `: ` + question.question + `</div>`);
         if (question.type === 'boolean') {
             let trueButton = $('<button>True</button>');

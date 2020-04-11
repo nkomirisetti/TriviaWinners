@@ -2,7 +2,7 @@ const ScorePageSetup = function (score, questionsCorrect) {
     let rootContainer = $('#rootContainer');
     rootContainer.empty();
 
-    let returnButton = $('<button>Back to Categories</button>');
+    let returnButton = $(`<button class='returnButton'>Back to Categories</button>`);
     
     //TODO add scoreboard option
     
