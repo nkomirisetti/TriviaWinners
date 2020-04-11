@@ -35,7 +35,33 @@ const QuestionPageSetup = function (categoryID) {
         let questionDiv = $(`<div></div>`);
         questionDiv.append(`<div class='questionTitle'> Question ` + (questionNumber + 1) + `: ` + question.question + `</div>`);
         if (question.type === 'boolean') {
-            
+            let trueButton = $('<button>True</button>');
+            let falseButton = $('<button>False</button>');
+            let correctAnswer = question.correct_answer === 'True';
+            trueButton.click(function () {
+                if (isAnswerClicked === false) {
+                    if (correctAnswer === true) {
+                        trueButton.addClass('correctAnswer');
+                    } else {
+                        trueButton.addClass('incorrectAnswer');
+                    }
+                    answerClicked(correctAnswer === true);
+                }
+            });
+
+            falseButton.click(function () {
+                if (isAnswerClicked === false) {
+                    if (correctAnswer === false) {
+                        falseButton.addClass('correctAnswer');
+                    } else {
+                        falseButton.addClass('incorrectAnswer');
+                    }
+                    answerClicked(correctAnswer === false);
+                }
+            });
+
+            questionDiv.append(trueButton);
+            questionDiv.append(falseButton);
         } else {
             let answers = [];
 
