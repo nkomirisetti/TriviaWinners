@@ -34,35 +34,38 @@ const QuestionPageSetup = function (categoryID) {
         isAnswerClicked = false;
         let questionDiv = $(`<div></div>`);
         questionDiv.append(`<div class='questionTitle'> Question ` + (questionNumber + 1) + `: ` + question.question + `</div>`);
+        if (question.type === 'boolean') {
+            
+        } else {
+            let answers = [];
 
-        let answers = [];
-
-        let correctAnswerButton = $('<button>' + question.correct_answer + '</button>');
-        correctAnswerButton.click(function () {
-            if (isAnswerClicked === false) {
-                correctAnswerButton.addClass('correctAnswer');
-                answerClicked(true);
-            }
-        });
-
-        answers.push(correctAnswerButton);
-
-        for (const answer of question.incorrect_answers) {
-            // TODO add true false case
-            let incorrectAnswerButton = $('<button>' + answer + '</button>');
-            incorrectAnswerButton.click(function () {
+            let correctAnswerButton = $('<button>' + question.correct_answer + '</button>');
+            correctAnswerButton.click(function () {
                 if (isAnswerClicked === false) {
-                    incorrectAnswerButton.addClass('incorrectAnswer');
-                    answerClicked(false);
+                    correctAnswerButton.addClass('correctAnswer');
+                    answerClicked(true);
                 }
             });
 
-            answers.push(incorrectAnswerButton);
-        }
+            answers.push(correctAnswerButton);
 
-        shuffleArray(answers);
-        for (const answer of answers) {
-            questionDiv.append(answer);
+            for (const answer of question.incorrect_answers) {
+                let incorrectAnswerButton = $('<button>' + answer + '</button>');
+                incorrectAnswerButton.click(function () {
+                    if (isAnswerClicked === false) {
+                        incorrectAnswerButton.addClass('incorrectAnswer');
+                        answerClicked(false);
+                    }
+                });
+
+                answers.push(incorrectAnswerButton);
+            }
+
+            shuffleArray(answers);
+            for (const answer of answers) {
+                questionDiv.append(answer);
+            }
+
         }
         return questionDiv;
     }
@@ -70,8 +73,8 @@ const QuestionPageSetup = function (categoryID) {
     const setNextQuestion = function () {
         clearInterval(questionTimerInstance);
         questionNumber += 1;
-        // TODO make this dynamic
-        if (questionNumber == 10) {
+        // TODO make this dynamic based on number of questions
+        if (questionNumber === 10) {
             ScorePageSetup(score, questionsCorrect);
             return;
         }
