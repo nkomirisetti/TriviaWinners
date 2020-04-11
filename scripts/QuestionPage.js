@@ -27,6 +27,7 @@ const QuestionPageSetup = function (categoryID) {
         rootContainer.append(scoreContainer);
         rootContainer.append(questionContainer);
         rootContainer.append(timeContainer);
+        rootContainer.append(buildPlayerContainer());
         setNextQuestion();
     });
 

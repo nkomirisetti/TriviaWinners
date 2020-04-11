@@ -2,7 +2,7 @@ var name;
 var picture;
 
 const selectRandomPicture = function () {
-    return animalsList[Math.floor(Math.random() * 18)];
+	return animalsList[Math.floor(Math.random() * 18)];
 }
 const animalsList = ['bee', 'bunny', 'cat', 'elephant', 'flamingo', 'fox', 'giraffe', 'hippo', 'koala', 'leopard', 'lion', 'monkey', 'moose', 'octopus', 'panda', 'polar-bear', 'puppy', 'racoon'];
 
@@ -24,5 +24,11 @@ const shuffleArray = function (array) {
 	}
 
 	return array;
-
 };
+
+const buildPlayerContainer = function () {
+	return $(`<div class='playerInfo'>
+				<img src='assets/animals/` + picture + `.png'></img>
+				<div>` + name + `</div>
+			  </div>`);
+}
