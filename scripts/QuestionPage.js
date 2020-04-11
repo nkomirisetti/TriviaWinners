@@ -1,10 +1,18 @@
-let questionNumber = 0;
+let questionNumber;
+let score;
+let questions;
+let questionTimerInstance;
+
 const QuestionPageSetup = function (categoryID) {
     $.ajax(getQuestion(categoryID)).done(function (response) {
-        response = response.results;
+        questions = response.results;
+        score = 0;
+        questionNumber = 0;
+        questionTimer = setInterval();
+
         let rootContainer = $('#rootContainer');
         rootContainer.empty();
-        rootContainer.append(buildQuestionDiv(response[questionNumber]));
+        rootContainer.append(buildQuestionDiv(questions[questionNumber]));
     });
 };
 
@@ -23,7 +31,6 @@ const buildQuestionDiv = function (question) {
 
     for (const answer of question.incorrect_answers) {
         // TODO add true false case
-
         let incorrectAnswerButton = $('<button>' + answer + '</button>');
         incorrectAnswerButton.click(function () {
             answerClicked(false);
@@ -41,8 +48,12 @@ const buildQuestionDiv = function (question) {
 
 const answerClicked = function (answer) {
     if (answer) {
-        alert('yes!')
+        alert('yes!');
     } else {
         alert('bro.');
     }
+}
+
+const questionTimer = function () {
+
 }

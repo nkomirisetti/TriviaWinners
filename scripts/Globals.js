@@ -1,10 +1,6 @@
-var questions;
 var name;
 var picture;
 
-const initialize = function () {
-    questions = '';
-};
 const selectRandomPicture = function () {
     return animalsList[Math.floor(Math.random() * 18)];
 }

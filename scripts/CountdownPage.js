@@ -18,6 +18,4 @@ const CountdownPageSetup = function (questionID, categoryName) {
     let subTextDiv = $(`<div class='subtext'>` + categoryName + `</div>`)
     rootContainer.append(timerDiv);
     rootContainer.append(subTextDiv);
-
-    
 };
