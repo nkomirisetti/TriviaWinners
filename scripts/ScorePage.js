@@ -12,9 +12,15 @@ const ScorePageSetup = function (score, questionsCorrect, categoryID) {
         returnButton.click(function () {
             CategoryPageSetup();
         });
-    
+
+        const scoreResult = 'You got ' + questionsCorrect + ' question';
+        if (questionsCorrect != 1) {
+            scoreResult += 's';
+        }
+        scoreResult += '. You placed ' + response[0].position + nth(response[0].position) + ' for this category';
+
         rootContainer.append(`<div class='scoreLabel'>Your score is ` + score + `</div>`);
-        rootContainer.append(`<div class='scoreSubLabel'>You got ` + questionsCorrect + ` questions correct</div>`);
+        rootContainer.append(`<div class='scoreSubLabel'>` + scoreResult + `</div>`);
         rootContainer.append(returnButton);
         rootContainer.append(buildPlayerContainer());
     });
