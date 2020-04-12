@@ -16,7 +16,7 @@ const getCategory = function () {
 }
 
 const getQuestion = function (questionID) {
-    if (questionID === 'ALL') {
+    if (questionID === 0) {
         return APIBase('https://opentdb.com/api.php?amount=10')
     } else {
         return APIBase('https://opentdb.com/api.php?amount=10&category=' + questionID);

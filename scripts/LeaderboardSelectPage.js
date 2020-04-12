@@ -1,11 +1,11 @@
-const CategoryPageSetup = function () {
+const LeaderboardSelectSetup = function () {
     $.ajax(getCategory()).done(function (response) {
         categories = response.trivia_categories;
 
         let rootContainer = $('#rootContainer');
         rootContainer.empty();
 
-        let title = $(`<div class='title'>Choose a Category</div>`);
+        let title = $(`<div class='title'>View Leaderboards</div>`);
         let categoriesList = $(`<div class='categoriesList'></div>`);
         
         categories.unshift(
@@ -18,14 +18,14 @@ const CategoryPageSetup = function () {
         for (const category of categories) {
             let button = $('<button>' + category.name + '</button>');
             button.click(function () {
-                CountdownPageSetup(category.id, category.name);
+                LeaderboardPageSetup(category.id);
             });
             categoriesList.append(button);
         };
 
-        let leaderBoardButton = $('<button class="miniButton">Leaderboards</button>');
+        let leaderBoardButton = $('<button class="miniButton">Return</button>');
         leaderBoardButton.click(function(){
-            LeaderboardSelectSetup();
+            CategoryPageSetup();
         })
 
         rootContainer.append(title);

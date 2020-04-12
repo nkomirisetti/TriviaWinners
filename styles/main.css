@@ -65,7 +65,7 @@ button {
 }
 
 .categoriesList {
-    height: 78vh;
+    height: 75vh;
     overflow-y: auto;
 }
 
@@ -241,4 +241,24 @@ button {
     margin-left: 4vw;
     margin-right: 4vw;
     margin-top: 10vh;
+}
+
+.miniReturnButton {
+    margin-top: 0vh;
+    margin-top: 3vh;
+}
+
+.miniPlayerInfo {
+    position: relative;
+    bottom: auto;
+}
+
+.leaderboardList {
+    height: 70vh;
+}
+
+.miniButton {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 2vh;
 }
