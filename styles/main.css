@@ -209,6 +209,7 @@ button {
     font-size: 10vh;
     font-family: 'Lobster', cursive;
     color: whitesmoke;
+    margin-top: 5vh;
 }
 
 .scoreSubLabel {
@@ -223,5 +224,5 @@ button {
 .returnButton {
     margin-left: 4vw;
     margin-right: 4vw;
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
