@@ -20,11 +20,21 @@ const QuestionPageSetup = function (categoryID) {
         let rootContainer = $('#rootContainer');
         rootContainer.empty();
 
-        questionContainer = $(`<div class = 'questionContainer'></div>`);
-        scoreContainer = $(`<div class = 'scoreContainer'></div>`);
         timeContainer = $(`<div class = 'timeContainer'></div>`);
+        questionContainer = $(`<div class = 'questionContainer'></div>`);
+        
+        scoreContainer = $(`<div class = 'scoreContainer'></div>`);
+        let returnButton = $(`<button class = 'quitButton'>Quit</button>`);
+        returnButton.click(function(){
+            clearInterval(questionTimerInstance);
+            CategoryPageSetup();
+        });
 
-        rootContainer.append(scoreContainer);
+        let headerContainer = $(`<div class='pageHeader'></div>`)
+        headerContainer.append(scoreContainer);
+        headerContainer.append(returnButton);
+
+        rootContainer.append(headerContainer);
         rootContainer.append(questionContainer);
         rootContainer.append(timeContainer);
         rootContainer.append(buildPlayerContainer());

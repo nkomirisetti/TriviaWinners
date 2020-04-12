@@ -125,13 +125,31 @@ button {
     color: whitesmoke;
 }
 
-.scoreContainer {
+.pageHeader {
     padding-top: 2vh;
     padding-left: 2vh;
+    display: inline-block;
+    width: 90vw;
+
+}
+
+.scoreContainer {
     font-size: 3vh;
     font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
     text-align: left;
+    float: left;
+}
+
+.quitButton {
+    float: right;
+    font-size: 3vh;
+    margin-top: 0vh;
+    padding: .5vw;
+    margin-right: 2vw;
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 0;
 }
 
 .questionContainer {
@@ -139,7 +157,7 @@ button {
 }
 
 .questionTitle {
-    font-size: 4vh;
+    font-size: 3.5vh;
     font-family: 'Montserrat', sans-serif;
     color: whitesmoke;
     padding-left: 2vw;
