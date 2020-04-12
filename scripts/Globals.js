@@ -2,7 +2,7 @@ var name;
 var picture;
 
 const selectRandomPicture = function () {
-	return animalsList[Math.floor(Math.random() * 18)];
+	return Math.floor(Math.random() * 18);
 }
 const animalsList = ['bee', 'bunny', 'cat', 'elephant', 'flamingo', 'fox', 'giraffe', 'hippo', 'koala', 'leopard', 'lion', 'monkey', 'moose', 'octopus', 'panda', 'polar-bear', 'puppy', 'racoon'];
 
@@ -28,7 +28,15 @@ const shuffleArray = function (array) {
 
 const buildPlayerContainer = function () {
 	return $(`<div class='playerInfo'>
-				<img src='assets/animals/` + picture + `.png'></img>
+				<img src='assets/animals/` + animalsList[picture] + `.png'></img>
 				<div class='playerText'>` + name + `</div>
 			  </div>`);
+}
+
+const printSQL = function () {
+	let output = "";
+	for (let i = 0; i < animalsList.length; i++) {
+		output +='INSERT INTO `sprites`(`spriteID`, `spriteName`) VALUES (' + i + ',"' + animalsList[i] +'");\n';
+	}
+	console.log(output);
 }

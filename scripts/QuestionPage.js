@@ -112,7 +112,7 @@ const QuestionPageSetup = function (categoryID) {
         questionNumber += 1;
         // TODO make this dynamic based on number of questions
         if (questionNumber === 10) {
-            ScorePageSetup(score, questionsCorrect);
+            ScorePageSetup(score, questionsCorrect, categoryID);
             return;
         }
         timeLeft = 60;
