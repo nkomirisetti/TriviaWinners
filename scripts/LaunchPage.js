@@ -7,14 +7,17 @@ const LaunchPageSetup = function () {
     continueButton.click(function () {
         const enteredName = $('#nameEntry').val().trim().toLowerCase();
 
-        if (enteredName) {
+        if(!enteredName){
+            alert('Please enter a valid name!');
+        } else if (enteredName.length > 10){
+            alert('That name is too long! Shrink it down a bit!');
+        } else if (!/[^a-z]/i.test(enteredName)) {
+            alert('Make sure you only use letters!')
+        } else {
             name = enteredName;
             picture = selectRandomPicture();
             CategoryPageSetup();
-        } else {
-            alert('Please enter a valid name!');
         }
-
     });
 
     rootContainer.append('<div class=\'mainText\'>Let\'s play Trivia!</div>');
