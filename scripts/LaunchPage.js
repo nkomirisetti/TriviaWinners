@@ -11,7 +11,7 @@ const LaunchPageSetup = function () {
             alert('Please enter a valid name!');
         } else if (enteredName.length > 10){
             alert('That name is too long! Shrink it down a bit!');
-        } else if (!/[^a-z]/i.test(enteredName)) {
+        } else if (/[^a-z]/i.test(enteredName)) {
             alert('Make sure you only use letters!')
         } else {
             name = enteredName;
