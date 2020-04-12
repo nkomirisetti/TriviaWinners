@@ -184,7 +184,6 @@ button {
     background-image: url('../assets/answerIcons/correct.png');
     background-repeat: no-repeat;
     background-position: 3px;
-    padding: 2vw;
     background-size: 3vh;
     border: 2px solid #4CAF50;
 }
@@ -194,7 +193,6 @@ button {
     background-repeat: no-repeat;
     background-position: 3px;
     background-size: 3vh;
-    padding: 2vw;
     border: 2px solid red;
     animation: incorrect 0.82s cubic-bezier(.36, .07, .19, .97) both;
 }
