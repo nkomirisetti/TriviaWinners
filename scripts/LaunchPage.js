@@ -3,6 +3,7 @@ const LaunchPageSetup = function () {
     rootContainer.empty();
 
 
+    alert('This page works best in a browser other than Safari on iPhone');
     let continueButton = $('<button>Start!</button>');
     continueButton.click(function () {
         const enteredName = $('#nameEntry').val().trim().toLowerCase();
