@@ -65,6 +65,7 @@ const QuestionPageSetup = function (categoryID) {
                     if (correctAnswer === false) {
                         falseButton.addClass('correctAnswer');
                     } else {
+                        trueButton.addClass('correctAnswer');
                         falseButton.addClass('incorrectAnswer');
                     }
                     answerClicked(correctAnswer === false);
@@ -84,17 +85,18 @@ const QuestionPageSetup = function (categoryID) {
                 }
             });
 
-            answers.push(correctAnswerButton);
 
             for (const answer of question.incorrect_answers) {
                 let incorrectAnswerButton = $('<button>' + answer + '</button>');
                 incorrectAnswerButton.click(function () {
                     if (isAnswerClicked === false) {
                         incorrectAnswerButton.addClass('incorrectAnswer');
+                        correctAnswerButton.addClass('correctAnswer');
                         answerClicked(false);
                     }
                 });
 
+                answers.push(correctAnswerButton);
                 answers.push(incorrectAnswerButton);
             }
 
